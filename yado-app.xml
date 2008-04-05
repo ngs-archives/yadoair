@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><application xmlns="http://ns.adobe.com/air/application/1.0">
+	<id>org.ngsdev.yado</id>
+	<version>1.0</version>
+	<filename>Yado</filename>
+	<description>じゃらんWebサービスを利用して、宿情報を検索するAdobe AIRウィジェット。</description>
+	<name>Yado</name>
+	<copyright>atsushi nagase http://ngsdev.org/</copyright>
+	<initialWindow>
+		  <content>yado.swf</content>
+		  <title>Yado</title>
+		  <systemChrome>none</systemChrome>
+		  <transparent>true</transparent>
+		  <visible>true</visible>
+		  <minimizable>true</minimizable>
+		  <maximizable>true</maximizable>
+		  <resizable>true</resizable>
+		  <width>434</width>
+		  <height>400</height>
+		  <x>200</x>
+		  <y>200</y>
+		  <minSize>434 400</minSize>
+		  <maxSize>434 400</maxSize>
+	</initialWindow>
+	<icon>
+		  
+		  
+		  
+		  
+	</icon>
+</application>

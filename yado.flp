@@ -1,0 +1,18 @@
+﻿<flash_project name="yado" version="1">
+    <project_folder name="as" expanded="true">
+        <project_folder name="org.ngsdev.airutil" expanded="false">
+            <project_file path="./as/org/ngsdev/airutil/AirUtil.as" filetype="as" />
+            <project_file path="./as/org/ngsdev/airutil/LocalFile.as" filetype="as" />
+            <project_file path="./as/org/ngsdev/airutil/WindowPosition.as" filetype="as" />
+        </project_folder>
+        <project_folder name="org.ngsdev.widgets.yado" expanded="false">
+            <project_file path="./as/org/ngsdev/widgets/yado/Base.as" filetype="as" />
+            <project_file path="./as/org/ngsdev/widgets/yado/Yado.as" filetype="as" />
+        </project_folder>
+        <project_folder name="org.ngsdev.api.jws" expanded="true">
+            <project_file path="./as/org/ngsdev/api/jws/JWS.as" filetype="as" />
+        </project_folder>
+    </project_folder>
+    <project_file path="./yado.fla" filetype="fla" profile="" />
+    <project_file path="./yado-app.xml" filetype="xml" />
+</flash_project>
