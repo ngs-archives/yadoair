@@ -10,7 +10,7 @@
 			this.jws = new JWS("leo11111317351");
 			this.addChild(this.base);
 			this.base.init();
-			WindowPosition.init();
+			//WindowPosition.init();
 		}
 	}
 }
