@@ -10,7 +10,6 @@ package org.ngsdev.api.jws.master {
 			code = x.@cd;
 			name = x.@name;
 			areas = [];
-			trace(name,code);
 		}
 	}
 }
