@@ -20,8 +20,8 @@ package org.ngsdev.api.jws.master {
 			xml.ignoreWhitespace = true;
 			default xml namespace = new Namespace("jws");
 			regions = [];
-			for each (var reg:XML in xml.Area.Region) {
-				regions.push(new Region(reg));
+			for each (var a:XML in xml.Area.Region) {
+				regions.push(new Region(a));
 			}
 		}
 		

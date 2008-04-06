@@ -2,12 +2,12 @@ package org.ngsdev.api.jws.master {
 	import org.ngsdev.api.jws.*;
 	import org.ngsdev.api.jws.master.*;
 	import flash.events.Event;
-	public class Region extends Area {
-		function Region(x:XML) {
+	public class LargeArea extends Area {
+		function LargeArea(x:XML) {
 			super(x);
 			default xml namespace = new Namespace("jws");
-			for each (var a:XML in x.Prefecture) {
-				areas.push(new Prefecture(a));
+			for each (var a:XML in x.SmallArea) {
+				areas.push(new SmallArea(a));
 			}
 		}
 	}
