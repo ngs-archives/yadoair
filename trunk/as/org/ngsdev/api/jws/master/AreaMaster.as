@@ -9,7 +9,7 @@ package org.ngsdev.api.jws.master {
 		public var _init:Boolean = false;
 		private var apiurl:String = "http://jws.jalan.net/APICommon/AreaSearch/V1/";
 		private var _urlloader:URLLoader = new URLLoader();
-		var regions:Array;
+		public var regions:Array;
 		public function AreaMaster(jws:JWS) {
 			_jws = jws;
 			_urlloader.addEventListener(Event.COMPLETE, onLoadXML);
