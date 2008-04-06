@@ -23,5 +23,8 @@ package org.ngsdev.api.jws {
 		private function connect() {
 			
 		}
+		public function getAreaMaster():AreaMaster {
+			return _areas;
+		}
 	}
 }
