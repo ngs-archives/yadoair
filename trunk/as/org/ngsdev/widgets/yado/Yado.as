@@ -2,15 +2,20 @@
 	import flash.display.*;
 	import org.ngsdev.api.jws.*;
 	import org.ngsdev.airutil.*;
+	import flash.events.*;
 	public class Yado extends Sprite {
 		var base:Base;
 		var jws:JWS;
 		public function Yado() {
-			this.base = new YadoBase();
-			this.jws = new JWS("leo11111317351");
-			this.addChild(this.base);
-			this.base.init();
+			base = new YadoBase();
+			jws = new JWS("leo11111317351");
+			jws.addEventListener("onInit",function(e:Event){ onJWSInit(); })
+			addChild(this.base);
+			base.init();
 			//WindowPosition.init();
+		}
+		private function onJWSInit() {
+			trace("onJWSInit");
 		}
 	}
 }
