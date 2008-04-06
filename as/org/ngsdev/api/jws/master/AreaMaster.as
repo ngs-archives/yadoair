@@ -23,7 +23,7 @@ package org.ngsdev.api.jws.master {
 			for each (var a:XML in xml.Area.Region) {
 				regions.push(new Region(a));
 			}
-			dispatchEvent(new Event("onMasterInit"));
+			dispatchEvent(new Event("onInit"));
 		}
 		
 	}
