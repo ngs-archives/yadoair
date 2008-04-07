@@ -5,6 +5,7 @@ package org.ngsdev.api.jws.master {
 	public class Area {
 		public var code:String;
 		public var name:String;
+		[ArrayElementType("Area")]
 		public var areas:Array;
 		public var type:int;
 		function Area(x:XML) {
