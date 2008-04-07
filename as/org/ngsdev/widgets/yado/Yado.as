@@ -16,6 +16,7 @@
 		public var selects:Sprite;
 		public function Yado() {
 			self = this;
+			stage.align = StageAlign.TOP_LEFT;
 			base = new YadoBase();
 			addChild(this.base);
 			base.init();
@@ -42,18 +43,17 @@
 				}
 				var s:SelectArea = new SelectArea();
 				s.appendButtons(l,t);
-				s.x = 174 * n;
 				selects.addChild(s);
+				s.x = (s.width+2) * n;
 				_hier[n] = s; 
 				this["select_"+t] = s;
 				focus(n);
 			}
 		}
 		public function focus(i:int):void {
-			trace(-_hier[i-1].x,i)
-			if(i>2) {
+			if(_hier[i-2]) {
 				tween = new Tween(selects,
-					[{x:-_hier[i-1].x}, Tween.easing, 24]
+					[{x:-_hier[i-2].x}, Tween.easing, 24]
 				);
 				tween.reset();
 				tween.start();

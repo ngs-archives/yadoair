@@ -8,7 +8,16 @@
 	import org.ngsdev.widgets.yado.*;
 	public class AreaButton extends MovieClip {
 		private var _area:Area;
+		private var dummy:Sprite;
 		public function AreaButton() {
+			dummy = new Sprite();
+    		dummy.graphics.beginFill(0xffffff);
+    		dummy.graphics.drawRect(0, 0, width, height);
+    		dummy.alpha = 0;
+    		dummy.graphics.endFill();
+			dummy.buttonMode = true;
+			dummy.useHandCursor = true;
+    		addChild(dummy);
 		}
 		public function setArea(a:Area) {
 			_area = a;
@@ -17,7 +26,7 @@
 		}
 		private function onClick(e:Event) {
 			var nt:int = _area.type+1;
-			Yado.self.showList(_area.areas,nt)
+			if(nt<=3) Yado.self.showList(_area.areas,nt)
 		}
 	}
 }
