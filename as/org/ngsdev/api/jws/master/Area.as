@@ -6,6 +6,7 @@ package org.ngsdev.api.jws.master {
 		public var code:String;
 		public var name:String;
 		public var areas:Array;
+		public var type:int;
 		function Area(x:XML) {
 			code = x.@cd;
 			name = x.@name;
