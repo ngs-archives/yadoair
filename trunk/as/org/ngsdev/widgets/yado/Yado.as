@@ -25,11 +25,12 @@
 			addChild(selects);
 			_hier = [];
 			jws = new JWS("leo11111317351");
-			jws.addEventListener("onInit",function(e:Event){ onJWSInit(); })
+			jws.addEventListener("onAreasInit",function(e:Event){ onJWSInit(); })
+			jws.getAreas();
 			//WindowPosition.init();
 		}
 		private function onJWSInit() {
-			showList(jws.getAreaMaster().regions,0)
+			showList(jws.areaMaster.regions,0)
 		}
 		public function showList(l:Array,n:int) {
 			var ta:Array = ["region","pref","larea","sarea"];

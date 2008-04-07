@@ -6,25 +6,21 @@ package org.ngsdev.api.jws {
 	import flash.net.URLLoader;
 	public class JWS extends EventDispatcher {
 		public var apikey = "";
-		private var _areas:AreaMaster;
+		public var areaMaster:AreaMaster;
 		public function JWS(a:String="") {
 			apikey = a;
-			getAreas();
 		}
 		public function getAreas() {
-			if(!_areas) {
-				_areas = new AreaMaster(this);
-				_areas.addEventListener("onInit",function(e:Event) { onAreasInit(); })
+			if(areaMaster) {
+				onAreasInit();
+			} else {
+				areaMaster = new AreaMaster(this);
+				areaMaster.addEventListener("onInit",onAreasInit)
 			}
 		}
-		private function onAreasInit() {
-			dispatchEvent(new Event("onInit"));
+		private function onAreasInit(e:Event=null) {
+			dispatchEvent(new Event("onAreasInit"));
 		}
-		private function connect() {
 			
-		}
-		public function getAreaMaster():AreaMaster {
-			return _areas;
-		}
 	}
 }
