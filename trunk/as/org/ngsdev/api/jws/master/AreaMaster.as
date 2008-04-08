@@ -7,6 +7,7 @@ package org.ngsdev.api.jws.master {
 	public class AreaMaster extends EventDispatcher {
 		public var _init:Boolean = false;
 		protected static var apiurl:String = "http://jws.jalan.net/APICommon/AreaSearch/V1/";
+		public static const INIT:String  = "onInit";
 		private var _urlloader:URLLoader = new URLLoader();
 		[ArrayElementType("Region")]
 		public var regions:Array;
@@ -22,7 +23,7 @@ package org.ngsdev.api.jws.master {
 			for each (var a:XML in xml.Area.Region) {
 				regions.push(new Region(a));
 			}
-			dispatchEvent(new Event("onInit"));
+			dispatchEvent(new Event(AreaMaster.INIT));
 		}
 	}
 }
