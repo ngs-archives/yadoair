@@ -6,6 +6,7 @@ package org.ngsdev.api.jws.search {
 	import flash.net.URLLoader;
 	public class YadoSearch extends EventDispatcher {
 		protected static var apiurl:String = "http://jws.jalan.net/APIAdvance/HotelSearch/V1/";
+		public static const INIT:String = "onInit";
 		private var _urlloader:URLLoader = new URLLoader();
 		[ArrayElementType("YadoResult")]
 		public var results:Array;
@@ -23,6 +24,7 @@ package org.ngsdev.api.jws.search {
 			for each (var a:XML in xml.Hotel) {
 				results.push(new YadoResult(a));
 			}
+			dispatchEvent(new Event({type:YadoSearch.INIT}));
 		}
 	}
 }
