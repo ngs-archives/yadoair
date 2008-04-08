@@ -9,6 +9,7 @@ package org.ngsdev.widgets.yado {
 	public class SelectArea extends MovieClip {
 		private var _type:String;
 		public var buttons:Array;
+		public var selected:AreaButton;
 		public function SelectArea() {
 		}
 		public function appendButtons(list:Array,t:String):void {
@@ -18,6 +19,7 @@ package org.ngsdev.widgets.yado {
 			var tgy:Number = 0;
 			for each (var l:Area in list) {
 				b = new AreaButton1();
+				b.selectArea = this;
 				b.setArea(l);
 				b.y = tgy;
 				tgy += b.height + 2;
@@ -27,6 +29,9 @@ package org.ngsdev.widgets.yado {
 		}
 		public function get type():String {
 			return _type;
+		}
+		public function get code():String {
+			return selected&&selected.code?selected.code:"";
 		}
 	}
 }

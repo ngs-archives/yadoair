@@ -9,6 +9,7 @@
 	public class AreaButton extends MovieClip {
 		private var _area:Area;
 		private var dummy:Sprite;
+		public var selectArea:SelectArea;
 		public function AreaButton() {
 			dummy = new Sprite();
     		dummy.graphics.beginFill(0xffffff);
@@ -24,9 +25,14 @@
 			name_tf.text = a.name;
 			addEventListener(MouseEvent.CLICK, onClick);
 		}
+		public function get code() {
+			return _area.code;
+		}
 		private function onClick(e:Event) {
+			selectArea.selected = this;
 			var nt:int = _area.type+1;
-			if(nt<=3) Yado.self.showList(_area.areas,nt)
+			if(nt<=3) Yado.self.showList(_area.areas,nt);
+			else Yado.self.showYados();
 		}
 	}
 }

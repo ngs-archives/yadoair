@@ -5,14 +5,15 @@ package org.ngsdev.api.jws.search {
 	import flash.net.URLRequest;
 	import flash.net.URLLoader;
 	public class YadoSearch extends EventDispatcher {
-		protected static var apiurl:String = "http://jws.jalan.net/APICommon/AreaSearch/V1/";
+		protected static var apiurl:String = "http://jws.jalan.net/APIAdvance/HotelSearch/V1/";
 		private var _urlloader:URLLoader = new URLLoader();
+		[ArrayElementType("YadoResult")]
 		public var results:Array;
 		function YadoSearch() {
 		}
-		public function search(params:Array,adv:Boolean=false):void {
+		public function search(prm:YadoSearchParam,adv:Boolean=false):void {
 			_urlloader.addEventListener(Event.COMPLETE, onLoadXML);
-			_urlloader.load(new URLRequest(apiurl+"?key="+JWS.apikey));
+			_urlloader.load(new URLRequest(apiurl+"?key="+JWS.apikey+"&"+prm.queryString));
 		}
 		private function onLoadXML(e:Event=null) {
 			var xml:XML = new XML(_urlloader.data);
