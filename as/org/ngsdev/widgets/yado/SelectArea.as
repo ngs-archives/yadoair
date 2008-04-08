@@ -33,5 +33,8 @@ package org.ngsdev.widgets.yado {
 		public function get code():String {
 			return selected&&selected.code?selected.code:"";
 		}
+		public function get areaname():String {
+			return selected&&selected.areaname?selected.areaname:"";
+		}
 	}
 }

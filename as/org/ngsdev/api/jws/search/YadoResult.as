@@ -37,8 +37,8 @@ package org.ngsdev.api.jws.search {
 						creditcard = new Object();
 						for each (var c:XML in atrs) creditcard[c.name().toString().replace(/@/i,"")] = c == "true";
 						break;
-					case "X": _lat = parseInt(t)/10000000; break;
-					case "Y": _lng = parseInt(t)/10000000; break;
+					case "X": _lat = parseInt(t)/1000/3600; break;
+					case "Y": _lng = parseInt(t)/1000/3600; break;
 					case "Plan": plans.push(new YadoResultPlan(n)); break;
 					case "NumberOfRatings":
 					case "SampleRateFrom":
