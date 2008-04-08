@@ -1,3 +1,13 @@
+/* ===============================================
+*
+*  org.ngsdev.api.jws.JWS
+*  Jalan WebService for ActionScript3.0
+*  http://code.google.com/p/yadoair/
+*
+*  (C)atsushi nagase http://ngsdev.org/
+*  License : Mozilla Public License 1.1
+*
+=============================================== */
 package org.ngsdev.api.jws {
 	import org.ngsdev.api.jws.*;
 	import org.ngsdev.api.jws.master.*;
