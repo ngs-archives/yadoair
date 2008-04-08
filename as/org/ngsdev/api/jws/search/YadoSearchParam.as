@@ -34,7 +34,7 @@
 		}
 		public function get queryString():String {
 			var ret:String = "";
-			for(var i in _params) ret += i+"="+_params[i];
+			for(var i in _params) ret += i+"="+_params[i]+"&";
 			return ret;
 		}
 	}
