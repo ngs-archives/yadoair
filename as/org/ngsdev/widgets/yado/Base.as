@@ -7,7 +7,7 @@
 	import org.ngsdev.widgets.yado.*;
 	public class Base extends MovieClip {
 		public function init() {
-			trace("Hello,my name is Yado.",this.visible,this.height,this.width);
+			
 		}
 	}
 }
