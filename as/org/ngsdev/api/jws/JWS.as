@@ -23,7 +23,7 @@ package org.ngsdev.api.jws {
 		private function onAreasInit(e:Event=null):void {
 			dispatchEvent(new Event("onAreasInit"));
 		}
-		public function getYados(prm:Array,adv:Boolean=false):void {
+		public function getYados(prm:YadoSearchParam,adv:Boolean=false):void {
 			if(!yadoSearch) {
 				yadoSearch = new YadoSearch();
 				yadoSearch.addEventListener("onInit",onGetYados);

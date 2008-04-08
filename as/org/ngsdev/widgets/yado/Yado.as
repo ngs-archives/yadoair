@@ -4,6 +4,7 @@
 	import fl.motion.easing.*;
 	import org.as3s.Tween;
 	import org.ngsdev.api.jws.*;
+	import org.ngsdev.api.jws.search.*;
 	import org.ngsdev.airutil.*;
 	import org.ngsdev.widgets.yado.*;
 	public class Yado extends Sprite {
@@ -59,6 +60,16 @@
 				tween.reset();
 				tween.start();
 			}
+		}
+		public function showYados() {
+			trace(_hier[0].code,_hier[1].code,_hier[2].code,_hier[3].code)
+			var opt:YadoSearchParam = new YadoSearchParam({
+				reg      : _hier[0] ? _hier[0].code : "",
+				pref     : _hier[1] ? _hier[1].code : "",
+				l_area  : _hier[2] ? _hier[2].code : "",
+				s_area : _hier[3] ? _hier[3].code : ""
+			});
+			jws.getYados(opt);
 		}
 	}
 }
