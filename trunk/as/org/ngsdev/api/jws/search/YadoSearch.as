@@ -24,7 +24,7 @@ package org.ngsdev.api.jws.search {
 			for each (var a:XML in xml.Hotel) {
 				results.push(new YadoResult(a));
 			}
-			dispatchEvent(new Event({type:YadoSearch.INIT}));
+			dispatchEvent(new Event(YadoSearch.INIT));
 		}
 	}
 }
