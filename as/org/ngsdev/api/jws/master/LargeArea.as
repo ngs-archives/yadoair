@@ -1,7 +1,4 @@
 package org.ngsdev.api.jws.master {
-	import org.ngsdev.api.jws.*;
-	import org.ngsdev.api.jws.master.*;
-	import flash.events.Event;
 	public class LargeArea extends Area {
 		function LargeArea(x:XML) {
 			super(x);

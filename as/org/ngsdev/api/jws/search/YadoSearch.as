@@ -1,6 +1,6 @@
 package org.ngsdev.api.jws.search {
-	import org.ngsdev.api.jws.*;
-	import org.ngsdev.api.jws.search.*;
+	import org.ngsdev.api.jws.JWS;
+	import org.ngsdev.api.jws.search.YadoResult;
 	import flash.events.*;
 	import flash.net.URLRequest;
 	import flash.net.URLLoader;
