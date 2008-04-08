@@ -28,6 +28,9 @@
 		public function get code() {
 			return _area.code;
 		}
+		public function get areaname() {
+			return _area.name;
+		}
 		private function onClick(e:Event) {
 			selectArea.selected = this;
 			var nt:int = _area.type+1;

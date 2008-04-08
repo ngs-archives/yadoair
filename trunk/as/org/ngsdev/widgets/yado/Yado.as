@@ -64,10 +64,11 @@
 		}
 		public function showYados() {
 			trace(_hier[0].code,_hier[1].code,_hier[2].code,_hier[3].code)
+			trace(_hier[0].areaname,_hier[1].areaname,_hier[2].areaname,_hier[3].areaname)
 			var opt:YadoSearchParam = new YadoSearchParam({
-				reg      : _hier[0] ? _hier[0].code : "",
-				pref     : _hier[1] ? _hier[1].code : "",
-				l_area  : _hier[2] ? _hier[2].code : "",
+				reg      : _hier[0]&&!_hier[1] ? _hier[0].code : "",
+				pref     : _hier[1]&&!_hier[2] ? _hier[1].code : "",
+				l_area  : _hier[2]&&!_hier[3] ? _hier[2].code : "",
 				s_area : _hier[3] ? _hier[3].code : "",
 				xml_ptn : "2"
 			});
@@ -78,7 +79,7 @@
 			jws.removeEventListener(JWS.GET_YADOS,onGetYados);
 			trace(jws.yadoSearch.results.length);
 			for each(var y:YadoResult in jws.yadoSearch.results) {
-				trace(y.name,y.id)
+				trace(y.getPosition(),y.address)
 			}
 		}
 	}
