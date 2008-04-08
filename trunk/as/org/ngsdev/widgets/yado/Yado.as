@@ -26,11 +26,12 @@
 			addChild(selects);
 			_hier = [];
 			jws = new JWS("leo11111317351");
-			jws.addEventListener("onAreasInit",function(e:Event){ onJWSInit(); })
+			jws.addEventListener(JWS.AREAS_INIT,onJWSInit);
 			jws.getAreas();
 			//WindowPosition.init();
 		}
-		private function onJWSInit() {
+		private function onJWSInit(e:Event=null) {
+			jws.removeEventListener(JWS.AREAS_INIT,onJWSInit);
 			showList(jws.areaMaster.regions,0)
 		}
 		public function showList(l:Array,n:int) {
@@ -70,7 +71,15 @@
 				s_area : _hier[3] ? _hier[3].code : "",
 				xml_ptn : "2"
 			});
+			jws.addEventListener(JWS.GET_YADOS,onGetYados);
 			jws.getYados(opt);
+		}
+		private function onGetYados(e:Event=null) {
+			jws.removeEventListener(JWS.GET_YADOS,onGetYados);
+			trace(jws.yadoSearch.results.length);
+			for each(var y:YadoResult in jws.yadoSearch.results) {
+				trace(y.name,y.id)
+			}
 		}
 	}
 }
