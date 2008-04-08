@@ -20,7 +20,7 @@ package org.ngsdev.api.jws.search {
 			xml.ignoreWhitespace = true;
 			default xml namespace = new Namespace("jws");
 			results = [];
-			for each (var a:XML in xml.Results.Hotel) {
+			for each (var a:XML in xml.Hotel) {
 				results.push(new YadoResult(a));
 			}
 		}
