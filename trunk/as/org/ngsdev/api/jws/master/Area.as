@@ -1,7 +1,5 @@
 package org.ngsdev.api.jws.master {
-	import org.ngsdev.api.jws.*;
-	import org.ngsdev.api.jws.master.*;
-	import flash.events.*;
+	import flash.events.EventDispatcher;
 	public class Area extends EventDispatcher {
 		public var code:String;
 		public var name:String;

@@ -67,7 +67,8 @@
 				reg      : _hier[0] ? _hier[0].code : "",
 				pref     : _hier[1] ? _hier[1].code : "",
 				l_area  : _hier[2] ? _hier[2].code : "",
-				s_area : _hier[3] ? _hier[3].code : ""
+				s_area : _hier[3] ? _hier[3].code : "",
+				xml_ptn : "2"
 			});
 			jws.getYados(opt);
 		}
