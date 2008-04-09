@@ -7,6 +7,8 @@
 	import org.ngsdev.api.jws.search.*;
 	import org.ngsdev.airutil.*;
 	import org.ngsdev.widgets.yado.*;
+	import org.ngsdev.widgets.yado.cassettes.Cassette;
+	import sandbox.umaptest.*;
 	public class Yado extends Sprite {
 		public var base:Base;
 		public var jws:JWS;
@@ -15,6 +17,8 @@
 		private var _hier:Array;
 		private var tween:Tween;
 		public var selects:Sprite;
+		public var cassettes_mc:Sprite;
+		public var map:Map;
 		public function Yado() {
 			self = this;
 			stage.align = StageAlign.TOP_LEFT;
@@ -63,8 +67,6 @@
 			}
 		}
 		public function showYados() {
-			trace(_hier[0].code,_hier[1].code,_hier[2].code,_hier[3].code)
-			trace(_hier[0].areaname,_hier[1].areaname,_hier[2].areaname,_hier[3].areaname)
 			var opt:YadoSearchParam = new YadoSearchParam({
 				reg      : _hier[0]&&!_hier[1] ? _hier[0].code : "",
 				pref     : _hier[1]&&!_hier[2] ? _hier[1].code : "",
@@ -77,9 +79,21 @@
 		}
 		private function onGetYados(e:Event=null) {
 			jws.removeEventListener(JWS.GET_YADOS,onGetYados);
-			trace(jws.yadoSearch.results.length);
-			for each(var y:YadoResult in jws.yadoSearch.results) {
-				trace(y.getPosition(),y.address)
+			if(cassettes_mc) removeChild(cassettes_mc);
+			cassettes_mc = new Sprite();
+			var cas:Cassette,pos:Array;
+			if(!map) {
+				map = new Map();
+				addChild(map);	
+			}
+			var pin:Pin;
+			for each(var yd:YadoResult in jws.yadoSearch.results) {
+				cas = new Cassette();
+				cas.result = yd;
+				pos = yd.getPosition();
+				pin = map.prot(pos[0],pos[1]);
+				pin.description = yd.address;
+				pin.name = yd.name;
 			}
 		}
 	}
